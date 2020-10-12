@@ -1,0 +1,3687 @@
+{
+  "contractName": "LockLoan",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_borrower",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_lender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_endDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_endMonth",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_endYear",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amountLocked",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_interestRate",
+          "type": "uint256"
+        }
+      ],
+      "name": "lockLoan",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getNumLockedLoanDetails",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_borrower",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_assetId",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "version",
+          "type": "uint256"
+        }
+      ],
+      "name": "addAssetsToLoan",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_borrower\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_assetId\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"version\",\"type\":\"uint256\"}],\"name\":\"addAssetsToLoan\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getNumLockedLoanDetails\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_borrower\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_endDate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_endMonth\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_endYear\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountLocked\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_interestRate\",\"type\":\"uint256\"}],\"name\":\"lockLoan\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/gyan/Documents/ProjectGyan/BabylonProject/FarmLend/contracts/LockLoan.sol\":\"LockLoan\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/gyan/Documents/ProjectGyan/BabylonProject/FarmLend/contracts/LockLoan.sol\":{\"keccak256\":\"0x557c835eba5bc64a90014c64421ed93a5770bbd941633ed0114500b0850b1b88\",\"urls\":[\"bzz-raw://656bb0d5ae0a75d3b5650491e29c85c80ae2414816752e35e2e59b32bb7526ba\",\"dweb:/ipfs/QmQfLfQUYGsAK9DNob16htb4ZLXRUcjvh5ViEuPyztMLoq\"]}},\"version\":1}",
+  "bytecode": "0x60806040526106d9806100136000396000f3fe6080604052600436106100345760003560e01c80634766d9a21461003957806386b8308d14610064578063b4407e3614610112575b600080fd5b34801561004557600080fd5b5061004e61027d565b6040518082815260200191505060405180910390f35b6100f8600480360360e081101561007a57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291908035906020019092919080359060200190929190803590602001909291908035906020019092919050505061028a565b604051808215151515815260200191505060405180910390f35b34801561011e57600080fd5b506102026004803603606081101561013557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019064010000000081111561017257600080fd5b82018360208201111561018457600080fd5b803590602001918460018302840111640100000000831117156101a657600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929080359060200190929190505050610500565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610242578082015181840152602081019050610227565b50505050905090810190601f16801561026f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6000600180549050905090565b6000610294610579565b6000808a73ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020604051806101600160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820154815260200160038201548152602001600482015481526020016005820154815260200160068201548152602001600782015481526020016008820154815260200160098201548152602001600a82015481525050905088816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505087816020019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050868160a0018181525050858160c0018181525050848160e00181815250508381610100018181525050828161012001818152505060018990806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506001915050979650505050505050565b606060008060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508381600b016000858152602001908152602001600020908051906020019061056d9291906105ff565b50839150509392505050565b604051806101600160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061064057805160ff191683800117855561066e565b8280016001018555821561066e579182015b8281111561066d578251825591602001919060010190610652565b5b50905061067b919061067f565b5090565b6106a191905b8082111561069d576000816000905550600101610685565b5090565b9056fea265627a7a72315820609ed140dc558f2d87999e5f1e9c729376e58098e157c2f68cb624296bfa42f164736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600436106100345760003560e01c80634766d9a21461003957806386b8308d14610064578063b4407e3614610112575b600080fd5b34801561004557600080fd5b5061004e61027d565b6040518082815260200191505060405180910390f35b6100f8600480360360e081101561007a57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291908035906020019092919080359060200190929190803590602001909291908035906020019092919050505061028a565b604051808215151515815260200191505060405180910390f35b34801561011e57600080fd5b506102026004803603606081101561013557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019064010000000081111561017257600080fd5b82018360208201111561018457600080fd5b803590602001918460018302840111640100000000831117156101a657600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929080359060200190929190505050610500565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610242578082015181840152602081019050610227565b50505050905090810190601f16801561026f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6000600180549050905090565b6000610294610579565b6000808a73ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020604051806101600160405290816000820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016001820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020016002820154815260200160038201548152602001600482015481526020016005820154815260200160068201548152602001600782015481526020016008820154815260200160098201548152602001600a82015481525050905088816000019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff168152505087816020019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff1681525050868160a0018181525050858160c0018181525050848160e00181815250508381610100018181525050828161012001818152505060018990806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506001915050979650505050505050565b606060008060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090508381600b016000858152602001908152602001600020908051906020019061056d9291906105ff565b50839150509392505050565b604051806101600160405280600073ffffffffffffffffffffffffffffffffffffffff168152602001600073ffffffffffffffffffffffffffffffffffffffff1681526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061064057805160ff191683800117855561066e565b8280016001018555821561066e579182015b8281111561066d578251825591602001919060010190610652565b5b50905061067b919061067f565b5090565b6106a191905b8082111561069d576000816000905550600101610685565b5090565b9056fea265627a7a72315820609ed140dc558f2d87999e5f1e9c729376e58098e157c2f68cb624296bfa42f164736f6c63430005100032",
+  "sourceMap": "91:1812:1:-;;;;;;;;;",
+  "deployedSourceMap": "91:1812:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1510:108;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1510:108:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;610:890;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;610:890:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1628:273;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1628:273:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1628:273:1;;;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;1628:273:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1628:273:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1628:273:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;1628:273:1;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1628:273:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1510:108;1565:4;1587:17;:24;;;;1580:31;;1510:108;:::o;610:890::-;779:4;794:30;;:::i;:::-;827:11;:22;839:9;827:22;;;;;;;;;;;;;;;794:55;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;882:9;859:11;:20;;:32;;;;;;;;;;;922:7;901:11;:18;;:28;;;;;;;;;;;1212:8;1190:11;:19;;:30;;;;;1253:9;1230:11;:20;;:32;;;;;1294:8;1272:11;:19;;:30;;;;;1348:13;1321:11;:24;;:40;;;;;1398:13;1371:11;:24;;:40;;;;;1430:17;1453:9;1430:33;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;1430:33:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1480:4;1473:11;;;610:890;;;;;;;;;:::o;1628:273::-;1730:13;1754:31;1788:11;:22;1800:9;1788:22;;;;;;;;;;;;;;;1754:56;;1852:8;1820:11;:20;;:29;1841:7;1820:29;;;;;;;;;;;:40;;;;;;;;;;;;:::i;:::-;;1877:8;1870:15;;;1628:273;;;;;:::o;91:1812::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "//SPDX-License-Identifier: educationwithgyan42@gmail.com\npragma solidity >=0.4.22 <0.7.0;\n\ncontract LockLoan {\n    \n    struct LoanDetails {\n        address borrower;\n        address lender;\n        uint startDate;\n        uint startMonth;\n        uint startYear;\n        uint endDate;\n        uint endMonth;\n        uint endYear;\n        uint amountLocked;\n        uint interestRate;\n        uint loanLockedTimeStamp;\n        mapping(uint => string) assetIds;\n    }\n    \n    constructor() public payable {\n\n    }\n    \n    mapping(address => LoanDetails) lockedLoans;\n    address[] lockedLoanDetails;\n    \n    function lockLoan(address _borrower, address _lender, uint _endDate, uint _endMonth, uint _endYear,\n    uint _amountLocked, uint _interestRate) external payable returns(bool){\n        LoanDetails memory loanDetails = lockedLoans[_borrower];\n        loanDetails.borrower = _borrower;\n        loanDetails.lender = _lender;\n        \n        //Recording the starting date details\n        // loanDetails.startDate = _startDate;\n        // loanDetails.startMonth = _startMonth;\n        // loanDetails.startYear = _startYear;\n        \n        //Recording the ending date details\n        loanDetails.endDate = _endDate;\n        loanDetails.endMonth = _endMonth;\n        loanDetails.endYear = _endYear;\n        \n        loanDetails.amountLocked = _amountLocked;\n        loanDetails.interestRate = _interestRate;\n        \n        lockedLoanDetails.push(_borrower);\n        return true;\n        \n    }\n    \n    function getNumLockedLoanDetails() public view returns(uint){\n        return lockedLoanDetails.length;\n    }\n    \n    function addAssetsToLoan(address _borrower, string memory _assetId, uint version) \n    public returns(string memory){\n        LoanDetails storage loanDetails = lockedLoans[_borrower];\n        loanDetails.assetIds[version] = _assetId;\n        return _assetId;\n        \n    }\n}",
+  "sourcePath": "/Users/gyan/Documents/ProjectGyan/BabylonProject/FarmLend/contracts/LockLoan.sol",
+  "ast": {
+    "absolutePath": "/Users/gyan/Documents/ProjectGyan/BabylonProject/FarmLend/contracts/LockLoan.sol",
+    "exportedSymbols": {
+      "LockLoan": [
+        600
+      ]
+    },
+    "id": 601,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 448,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:32:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 600,
+        "linearizedBaseContracts": [
+          600
+        ],
+        "name": "LockLoan",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "LockLoan.LoanDetails",
+            "id": 475,
+            "members": [
+              {
+                "constant": false,
+                "id": 450,
+                "name": "borrower",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "149:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 449,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "149:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 452,
+                "name": "lender",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "175:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 451,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "175:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 454,
+                "name": "startDate",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "199:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 453,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "199:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 456,
+                "name": "startMonth",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "223:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 455,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "223:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 458,
+                "name": "startYear",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "248:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 457,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "248:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 460,
+                "name": "endDate",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "272:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 459,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "272:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 462,
+                "name": "endMonth",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "294:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 461,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "294:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 464,
+                "name": "endYear",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "317:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 463,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "317:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 466,
+                "name": "amountLocked",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "339:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 465,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "339:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 468,
+                "name": "interestRate",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "366:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 467,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "366:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 470,
+                "name": "loanLockedTimeStamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "393:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 469,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "393:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 474,
+                "name": "assetIds",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "427:32:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                  "typeString": "mapping(uint256 => string)"
+                },
+                "typeName": {
+                  "id": 473,
+                  "keyType": {
+                    "id": 471,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "427:23:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                    "typeString": "mapping(uint256 => string)"
+                  },
+                  "valueType": {
+                    "id": 472,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "443:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "LoanDetails",
+            "nodeType": "StructDefinition",
+            "scope": 600,
+            "src": "120:346:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 478,
+              "nodeType": "Block",
+              "src": "505:8:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 479,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 476,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "487:2:1"
+            },
+            "returnParameters": {
+              "id": 477,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "505:0:1"
+            },
+            "scope": 600,
+            "src": "476:37:1",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 483,
+            "name": "lockedLoans",
+            "nodeType": "VariableDeclaration",
+            "scope": 600,
+            "src": "523:43:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LoanDetails_$475_storage_$",
+              "typeString": "mapping(address => struct LockLoan.LoanDetails)"
+            },
+            "typeName": {
+              "id": 482,
+              "keyType": {
+                "id": 480,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "531:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "523:31:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LoanDetails_$475_storage_$",
+                "typeString": "mapping(address => struct LockLoan.LoanDetails)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 481,
+                "name": "LoanDetails",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 475,
+                "src": "542:11:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                  "typeString": "struct LockLoan.LoanDetails"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 486,
+            "name": "lockedLoanDetails",
+            "nodeType": "VariableDeclaration",
+            "scope": 600,
+            "src": "572:27:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 484,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "572:7:1",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 485,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "572:9:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 561,
+              "nodeType": "Block",
+              "src": "784:716:1",
+              "statements": [
+                {
+                  "assignments": [
+                    506
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 506,
+                      "name": "loanDetails",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 561,
+                      "src": "794:30:1",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                        "typeString": "struct LockLoan.LoanDetails"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 505,
+                        "name": "LoanDetails",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 475,
+                        "src": "794:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                          "typeString": "struct LockLoan.LoanDetails"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 510,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 507,
+                      "name": "lockedLoans",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 483,
+                      "src": "827:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LoanDetails_$475_storage_$",
+                        "typeString": "mapping(address => struct LockLoan.LoanDetails storage ref)"
+                      }
+                    },
+                    "id": 509,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 508,
+                      "name": "_borrower",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 488,
+                      "src": "839:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "827:22:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_LoanDetails_$475_storage",
+                      "typeString": "struct LockLoan.LoanDetails storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "794:55:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 515,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 511,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "859:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 513,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "borrower",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 450,
+                      "src": "859:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 514,
+                      "name": "_borrower",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 488,
+                      "src": "882:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "859:32:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 516,
+                  "nodeType": "ExpressionStatement",
+                  "src": "859:32:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 521,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 517,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "901:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 519,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "lender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 452,
+                      "src": "901:18:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 520,
+                      "name": "_lender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 490,
+                      "src": "922:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "901:28:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 522,
+                  "nodeType": "ExpressionStatement",
+                  "src": "901:28:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 527,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 523,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1190:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 525,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "endDate",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 460,
+                      "src": "1190:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 526,
+                      "name": "_endDate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 492,
+                      "src": "1212:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1190:30:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 528,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1190:30:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 533,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 529,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1230:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 531,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "endMonth",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 462,
+                      "src": "1230:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 532,
+                      "name": "_endMonth",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 494,
+                      "src": "1253:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1230:32:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 534,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1230:32:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 539,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 535,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1272:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 537,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "endYear",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 464,
+                      "src": "1272:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 538,
+                      "name": "_endYear",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 496,
+                      "src": "1294:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1272:30:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 540,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1272:30:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 545,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 541,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1321:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 543,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "amountLocked",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 466,
+                      "src": "1321:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 544,
+                      "name": "_amountLocked",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 498,
+                      "src": "1348:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1321:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 546,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1321:40:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 551,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 547,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1371:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 549,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "interestRate",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 468,
+                      "src": "1371:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 550,
+                      "name": "_interestRate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 500,
+                      "src": "1398:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1371:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 552,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1371:40:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 556,
+                        "name": "_borrower",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 488,
+                        "src": "1453:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 553,
+                        "name": "lockedLoanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 486,
+                        "src": "1430:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 555,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1430:22:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 557,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1430:33:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 558,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1430:33:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 559,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1480:4:1",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 504,
+                  "id": 560,
+                  "nodeType": "Return",
+                  "src": "1473:11:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 562,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lockLoan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 501,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 488,
+                  "name": "_borrower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "628:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 487,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "628:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 490,
+                  "name": "_lender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "647:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 489,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "647:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 492,
+                  "name": "_endDate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "664:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 491,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "664:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 494,
+                  "name": "_endMonth",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "679:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 493,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "679:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 496,
+                  "name": "_endYear",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "695:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 495,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "695:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 498,
+                  "name": "_amountLocked",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "714:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 497,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "714:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 500,
+                  "name": "_interestRate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "734:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 499,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "734:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "627:126:1"
+            },
+            "returnParameters": {
+              "id": 504,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 503,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "779:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 502,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "779:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "778:6:1"
+            },
+            "scope": 600,
+            "src": "610:890:1",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 570,
+              "nodeType": "Block",
+              "src": "1570:48:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 567,
+                      "name": "lockedLoanDetails",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 486,
+                      "src": "1587:17:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 568,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "1587:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 566,
+                  "id": 569,
+                  "nodeType": "Return",
+                  "src": "1580:31:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 571,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNumLockedLoanDetails",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 563,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1542:2:1"
+            },
+            "returnParameters": {
+              "id": 566,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 565,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 571,
+                  "src": "1565:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 564,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1565:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1564:6:1"
+            },
+            "scope": 600,
+            "src": "1510:108:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 598,
+              "nodeType": "Block",
+              "src": "1744:157:1",
+              "statements": [
+                {
+                  "assignments": [
+                    583
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 583,
+                      "name": "loanDetails",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 598,
+                      "src": "1754:31:1",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                        "typeString": "struct LockLoan.LoanDetails"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 582,
+                        "name": "LoanDetails",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 475,
+                        "src": "1754:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                          "typeString": "struct LockLoan.LoanDetails"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 587,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 584,
+                      "name": "lockedLoans",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 483,
+                      "src": "1788:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LoanDetails_$475_storage_$",
+                        "typeString": "mapping(address => struct LockLoan.LoanDetails storage ref)"
+                      }
+                    },
+                    "id": 586,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 585,
+                      "name": "_borrower",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 573,
+                      "src": "1800:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1788:22:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_LoanDetails_$475_storage",
+                      "typeString": "struct LockLoan.LoanDetails storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1754:56:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 594,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 588,
+                          "name": "loanDetails",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 583,
+                          "src": "1820:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                            "typeString": "struct LockLoan.LoanDetails storage pointer"
+                          }
+                        },
+                        "id": 591,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "assetIds",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 474,
+                        "src": "1820:20:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                          "typeString": "mapping(uint256 => string storage ref)"
+                        }
+                      },
+                      "id": 592,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 590,
+                        "name": "version",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 577,
+                        "src": "1841:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1820:29:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 593,
+                      "name": "_assetId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 575,
+                      "src": "1852:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "1820:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 595,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1820:40:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 596,
+                    "name": "_assetId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 575,
+                    "src": "1877:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 581,
+                  "id": 597,
+                  "nodeType": "Return",
+                  "src": "1870:15:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 599,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addAssetsToLoan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 578,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 573,
+                  "name": "_borrower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 599,
+                  "src": "1653:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 572,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1653:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 575,
+                  "name": "_assetId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 599,
+                  "src": "1672:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 574,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1672:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 577,
+                  "name": "version",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 599,
+                  "src": "1696:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 576,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1696:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1652:57:1"
+            },
+            "returnParameters": {
+              "id": 581,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 580,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 599,
+                  "src": "1730:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 579,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1730:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1729:15:1"
+            },
+            "scope": 600,
+            "src": "1628:273:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 601,
+        "src": "91:1812:1"
+      }
+    ],
+    "src": "57:1846:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/gyan/Documents/ProjectGyan/BabylonProject/FarmLend/contracts/LockLoan.sol",
+    "exportedSymbols": {
+      "LockLoan": [
+        600
+      ]
+    },
+    "id": 601,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 448,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:32:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 600,
+        "linearizedBaseContracts": [
+          600
+        ],
+        "name": "LockLoan",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "LockLoan.LoanDetails",
+            "id": 475,
+            "members": [
+              {
+                "constant": false,
+                "id": 450,
+                "name": "borrower",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "149:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 449,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "149:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 452,
+                "name": "lender",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "175:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 451,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "175:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 454,
+                "name": "startDate",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "199:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 453,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "199:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 456,
+                "name": "startMonth",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "223:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 455,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "223:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 458,
+                "name": "startYear",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "248:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 457,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "248:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 460,
+                "name": "endDate",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "272:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 459,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "272:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 462,
+                "name": "endMonth",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "294:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 461,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "294:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 464,
+                "name": "endYear",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "317:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 463,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "317:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 466,
+                "name": "amountLocked",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "339:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 465,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "339:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 468,
+                "name": "interestRate",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "366:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 467,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "366:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 470,
+                "name": "loanLockedTimeStamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "393:24:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 469,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "393:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 474,
+                "name": "assetIds",
+                "nodeType": "VariableDeclaration",
+                "scope": 475,
+                "src": "427:32:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                  "typeString": "mapping(uint256 => string)"
+                },
+                "typeName": {
+                  "id": 473,
+                  "keyType": {
+                    "id": 471,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "427:23:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                    "typeString": "mapping(uint256 => string)"
+                  },
+                  "valueType": {
+                    "id": 472,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "443:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "LoanDetails",
+            "nodeType": "StructDefinition",
+            "scope": 600,
+            "src": "120:346:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 478,
+              "nodeType": "Block",
+              "src": "505:8:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 479,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 476,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "487:2:1"
+            },
+            "returnParameters": {
+              "id": 477,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "505:0:1"
+            },
+            "scope": 600,
+            "src": "476:37:1",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 483,
+            "name": "lockedLoans",
+            "nodeType": "VariableDeclaration",
+            "scope": 600,
+            "src": "523:43:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LoanDetails_$475_storage_$",
+              "typeString": "mapping(address => struct LockLoan.LoanDetails)"
+            },
+            "typeName": {
+              "id": 482,
+              "keyType": {
+                "id": 480,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "531:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "523:31:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LoanDetails_$475_storage_$",
+                "typeString": "mapping(address => struct LockLoan.LoanDetails)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 481,
+                "name": "LoanDetails",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 475,
+                "src": "542:11:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                  "typeString": "struct LockLoan.LoanDetails"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 486,
+            "name": "lockedLoanDetails",
+            "nodeType": "VariableDeclaration",
+            "scope": 600,
+            "src": "572:27:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 484,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "572:7:1",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 485,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "572:9:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 561,
+              "nodeType": "Block",
+              "src": "784:716:1",
+              "statements": [
+                {
+                  "assignments": [
+                    506
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 506,
+                      "name": "loanDetails",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 561,
+                      "src": "794:30:1",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                        "typeString": "struct LockLoan.LoanDetails"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 505,
+                        "name": "LoanDetails",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 475,
+                        "src": "794:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                          "typeString": "struct LockLoan.LoanDetails"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 510,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 507,
+                      "name": "lockedLoans",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 483,
+                      "src": "827:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LoanDetails_$475_storage_$",
+                        "typeString": "mapping(address => struct LockLoan.LoanDetails storage ref)"
+                      }
+                    },
+                    "id": 509,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 508,
+                      "name": "_borrower",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 488,
+                      "src": "839:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "827:22:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_LoanDetails_$475_storage",
+                      "typeString": "struct LockLoan.LoanDetails storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "794:55:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 515,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 511,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "859:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 513,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "borrower",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 450,
+                      "src": "859:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 514,
+                      "name": "_borrower",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 488,
+                      "src": "882:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "859:32:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 516,
+                  "nodeType": "ExpressionStatement",
+                  "src": "859:32:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 521,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 517,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "901:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 519,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "lender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 452,
+                      "src": "901:18:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 520,
+                      "name": "_lender",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 490,
+                      "src": "922:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "901:28:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 522,
+                  "nodeType": "ExpressionStatement",
+                  "src": "901:28:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 527,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 523,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1190:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 525,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "endDate",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 460,
+                      "src": "1190:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 526,
+                      "name": "_endDate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 492,
+                      "src": "1212:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1190:30:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 528,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1190:30:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 533,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 529,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1230:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 531,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "endMonth",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 462,
+                      "src": "1230:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 532,
+                      "name": "_endMonth",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 494,
+                      "src": "1253:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1230:32:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 534,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1230:32:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 539,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 535,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1272:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 537,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "endYear",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 464,
+                      "src": "1272:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 538,
+                      "name": "_endYear",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 496,
+                      "src": "1294:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1272:30:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 540,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1272:30:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 545,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 541,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1321:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 543,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "amountLocked",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 466,
+                      "src": "1321:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 544,
+                      "name": "_amountLocked",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 498,
+                      "src": "1348:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1321:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 546,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1321:40:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 551,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 547,
+                        "name": "loanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 506,
+                        "src": "1371:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_memory_ptr",
+                          "typeString": "struct LockLoan.LoanDetails memory"
+                        }
+                      },
+                      "id": 549,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "interestRate",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 468,
+                      "src": "1371:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 550,
+                      "name": "_interestRate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 500,
+                      "src": "1398:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1371:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 552,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1371:40:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 556,
+                        "name": "_borrower",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 488,
+                        "src": "1453:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 553,
+                        "name": "lockedLoanDetails",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 486,
+                        "src": "1430:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 555,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1430:22:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 557,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1430:33:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 558,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1430:33:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 559,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "1480:4:1",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 504,
+                  "id": 560,
+                  "nodeType": "Return",
+                  "src": "1473:11:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 562,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lockLoan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 501,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 488,
+                  "name": "_borrower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "628:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 487,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "628:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 490,
+                  "name": "_lender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "647:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 489,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "647:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 492,
+                  "name": "_endDate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "664:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 491,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "664:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 494,
+                  "name": "_endMonth",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "679:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 493,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "679:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 496,
+                  "name": "_endYear",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "695:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 495,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "695:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 498,
+                  "name": "_amountLocked",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "714:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 497,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "714:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 500,
+                  "name": "_interestRate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "734:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 499,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "734:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "627:126:1"
+            },
+            "returnParameters": {
+              "id": 504,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 503,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 562,
+                  "src": "779:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 502,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "779:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "778:6:1"
+            },
+            "scope": 600,
+            "src": "610:890:1",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 570,
+              "nodeType": "Block",
+              "src": "1570:48:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 567,
+                      "name": "lockedLoanDetails",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 486,
+                      "src": "1587:17:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                        "typeString": "address[] storage ref"
+                      }
+                    },
+                    "id": 568,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "1587:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 566,
+                  "id": 569,
+                  "nodeType": "Return",
+                  "src": "1580:31:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 571,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNumLockedLoanDetails",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 563,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1542:2:1"
+            },
+            "returnParameters": {
+              "id": 566,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 565,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 571,
+                  "src": "1565:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 564,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1565:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1564:6:1"
+            },
+            "scope": 600,
+            "src": "1510:108:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 598,
+              "nodeType": "Block",
+              "src": "1744:157:1",
+              "statements": [
+                {
+                  "assignments": [
+                    583
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 583,
+                      "name": "loanDetails",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 598,
+                      "src": "1754:31:1",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                        "typeString": "struct LockLoan.LoanDetails"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 582,
+                        "name": "LoanDetails",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 475,
+                        "src": "1754:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                          "typeString": "struct LockLoan.LoanDetails"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 587,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 584,
+                      "name": "lockedLoans",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 483,
+                      "src": "1788:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_LoanDetails_$475_storage_$",
+                        "typeString": "mapping(address => struct LockLoan.LoanDetails storage ref)"
+                      }
+                    },
+                    "id": 586,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 585,
+                      "name": "_borrower",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 573,
+                      "src": "1800:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1788:22:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_LoanDetails_$475_storage",
+                      "typeString": "struct LockLoan.LoanDetails storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1754:56:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 594,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 588,
+                          "name": "loanDetails",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 583,
+                          "src": "1820:11:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_LoanDetails_$475_storage_ptr",
+                            "typeString": "struct LockLoan.LoanDetails storage pointer"
+                          }
+                        },
+                        "id": 591,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "assetIds",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 474,
+                        "src": "1820:20:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                          "typeString": "mapping(uint256 => string storage ref)"
+                        }
+                      },
+                      "id": 592,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 590,
+                        "name": "version",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 577,
+                        "src": "1841:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1820:29:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 593,
+                      "name": "_assetId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 575,
+                      "src": "1852:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "1820:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 595,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1820:40:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 596,
+                    "name": "_assetId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 575,
+                    "src": "1877:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 581,
+                  "id": 597,
+                  "nodeType": "Return",
+                  "src": "1870:15:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 599,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addAssetsToLoan",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 578,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 573,
+                  "name": "_borrower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 599,
+                  "src": "1653:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 572,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1653:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 575,
+                  "name": "_assetId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 599,
+                  "src": "1672:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 574,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1672:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 577,
+                  "name": "version",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 599,
+                  "src": "1696:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 576,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1696:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1652:57:1"
+            },
+            "returnParameters": {
+              "id": 581,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 580,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 599,
+                  "src": "1730:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 579,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1730:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1729:15:1"
+            },
+            "scope": 600,
+            "src": "1628:273:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 601,
+        "src": "91:1812:1"
+      }
+    ],
+    "src": "57:1846:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xB117eAA9D7d94CC9E54a85F10c13c8cf34A52781",
+      "transactionHash": "0x5f40b376bef4661b609cf7b1684a86bb75bddaae88e31697289910a56956843c"
+    }
+  },
+  "schemaVersion": "3.3.0",
+  "updatedAt": "2020-10-12T00:59:27.323Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
