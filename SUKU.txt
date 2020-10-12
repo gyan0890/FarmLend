@@ -1,0 +1,35 @@
+Get Bearer Token:
+
+url --location --request POST
+'https://keycloak.suku.network/auth/realms/suku-master/protocol/openid-connect/token'
+--header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'client_id=devkit-alpha'
+--data-urlencode 'grant_type=password' --data-urlencode 'username=devkit-alpha'
+--data-urlencode 'password=gosuku'
+
+
+Asset Template:
+https://devkit-alpha.suku.network/api/assetcatalog/assetcatalog
+{
+    "skuku": "Verification-Proofs",
+    "ids": [ ],
+    "name": "Verification Documents",
+    "category": "Farmer Loan Verification",
+    "description": "Verification document for crops",
+    "urls": [ "https://" ]
+}
+
+https://devkit-alpha.suku.network/api/assetcatalog/assets
+Asset creation
+{
+    "skuku": "Verification-Proofs",
+    "lotId": "1",
+    "name": "Land lease proof",
+    "category": "Farmer Loan Verification",
+    "description": "Document1",
+    "version": "0",
+    "txId" : "LoanProposalTxID",
+    "attributes": {
+        "DocName": "Proof1",
+        "Doc_Location": "https://www.google.com/url?sa=i&url=https%3A%2F%2Findianmoney.com%2Fresidential-land&psig=AOvVaw3Z0-K_3H0YRQy8Bf_D6JAI&ust=1602547240746000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODtqaTfrewCFQAAAAAdAAAAABAD"
+    }
+}
